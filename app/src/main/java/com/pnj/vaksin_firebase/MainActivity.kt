@@ -23,6 +23,8 @@ import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import com.pnj.vaksin_firebase.auth.SettingsActivity
+import com.pnj.vaksin_firebase.chat.ChatActivity
 import com.pnj.vaksin_firebase.databinding.ActivityMainBinding
 import com.pnj.vaksin_firebase.pasien.AddPasienActivity
 import com.pnj.vaksin_firebase.pasien.Pasien
@@ -79,6 +81,25 @@ class MainActivity : AppCompatActivity() {
             override fun afterTextChanged(p0: Editable?) {} //?
 
         })
+
+        binding.bottomNavigation.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.nav_bottom_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_bottom_setting -> {
+                    Log.e("goto_setting", "called")
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
+                }
+                R.id.nav_bottom_chat -> {
+                   val intent = Intent(this, ChatActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 }
 
     private fun load_data() {

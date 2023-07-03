@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Home"
+        android:icon="@drawable/baseline_add_24"
+        android:id="@+id/nav_bottom_home"
+    />
+
+    <item
+        android:id="@+id/nav_bottom_setting"
+        android:icon="@drawable/baseline_settings_24"
+        android:title="Setting"
+        />
+    <item
+        android:id="@+id/nav_bottom_chat"
+        android:icon="@drawable/baseline_chat_bubble_24"
+        android:title="Chat"
+        />
+
+</menu>
